@@ -13,5 +13,5 @@ response = requests.get(
 items = response.json()
 items = {item["bsgId"]: price for item in items if (price := item["avg24hPrice"])}
 
-with open("src/flea.json", "w") as file:
+with open("resources/flea.json", "w") as file:
     json.dump(items, file, indent=4, sort_keys=True)

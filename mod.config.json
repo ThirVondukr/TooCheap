@@ -4,6 +4,6 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"src": {
-		"src/main.js": "TamperModLoad"
+		"dist/main.js": "TamperModLoad"
 	}
 }
