@@ -6,12 +6,23 @@ import requests
 
 dotenv.load_dotenv()
 
-response = requests.get(
-    "https://tarkov-market.com/api/v1/items/all",
-    headers={"x-api-key": os.environ["TARKOV_MARKET_API_KEY"]},
-)
-items = response.json()
-items = {item["bsgId"]: price for item in items if (price := item["avg24hPrice"])}
+def update_prices():
+    response = requests.get(
+        "https://tarkov-market.com/api/v1/items/all",
+        headers={"x-api-key": os.environ["TARKOV_MARKET_API_KEY"]},
+    )
 
-with open("resources/flea.json", "w") as file:
-    json.dump(items, file, indent=4, sort_keys=True)
+    items = {}
+    for item in response.json():
+        if not item["avg24hPrice"]:
+            continue
+        items[item["bsgId"]] = {
+            "price": item["avg24hPrice"],
+            "name": item["name"]
+        }
+
+    with open("resources/flea.json", "w") as file:
+        json.dump(items, file, indent=4, sort_keys=True)
+
+if __name__ == '__main__':
+    update_prices()

@@ -3,16 +3,20 @@ import shutil
 from pathlib import Path
 from zipfile import ZipFile
 
+import flea
+
 AUTHOR = "Doctor"
 MOD_NAME = "TooCheap"
 VERSION = "0.0.3"
 MOD_ID = f"{AUTHOR}-{MOD_NAME}-{VERSION}"
 
+flea.update_prices()
+
 build_dir = Path("./build")
 if build_dir.exists():
     shutil.rmtree(build_dir)
 
-build_dir.mkdir(exist_ok=False)
+build_dir.mkdir(exist_ok=True)
 
 includes = [
     Path("./dist"),
