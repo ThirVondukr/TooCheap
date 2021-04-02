@@ -12,23 +12,13 @@ export interface ItemCategory {
 }
 
 
-export interface Database {
-    items: { [key: string]: ItemTemplate },
-    templates: {
-        Items: ItemCategory[]
-    }
-}
-
-export declare var _database: Database;
-export declare var logger: any;
-
 export interface FleaItem {
     name: string,
     price: number,
 }
 
 export interface ModConfig {
-    price_threshold: number
+    min_price: number
     update_flea_prices: boolean
     update_trader_prices: boolean
 }

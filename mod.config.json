@@ -4,6 +4,6 @@
 	"version": "0.0.2",
 	"license": "MIT",
 	"src": {
-		"dist/main.js": "TamperModLoad"
+		"dist/main.js": "CacheModLoad"
 	}
 }
