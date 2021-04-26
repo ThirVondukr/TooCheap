@@ -1,7 +1,7 @@
 import {FleaItem, ItemCategory, ItemTemplate, ModConfig} from "./types";
 
 
-declare var logger: anbuily;
+declare var logger: any;
 declare var fileIO: any;
 // @ts-ignore
 const resolve_path: Function = internal.path.resolve;
