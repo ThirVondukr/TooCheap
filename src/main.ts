@@ -12,7 +12,6 @@ function update_trader_prices(flea_prices: Map<string, FleaItem>) {
 
     for (const item of Object.values(items)) {
         if (flea_prices.has(item._id)) {
-            console.log(`Updating ${item._id}, ${flea_prices.get(item._id)!}`)
             item._props.CreditsPrice = flea_prices.get(item._id)!.price;
         }
     }
