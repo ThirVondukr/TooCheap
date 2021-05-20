@@ -7,7 +7,7 @@ import flea
 
 AUTHOR = "Doctor"
 MOD_NAME = "TooCheap"
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 MOD_ID = f"{AUTHOR}-{MOD_NAME}-{VERSION}"
 
 flea.update_prices()
